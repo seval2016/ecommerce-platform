@@ -1,25 +1,33 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import './index.scss'
-import Products from 'productList/Products'
-import ShoppingCart from 'shoppingCart/ShoppingCart'
-import OrderHistory from 'orderHistory/OrderHistory'
-import UserAuthentication from 'userAuthentication/UserAuthentication'
+import React, { Suspense } from "react";
+import "./index.scss";
+import Navigation from "./components/Navigation/Navigation";
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
+
+const Products = React.lazy(() => import("productList/Products"));
+const ShoppingCart = React.lazy(() => import("shoppingCart/ShoppingCart"));
+const OrderHistory = React.lazy(() => import("orderHistory/OrderHistory"));
+const UserAuthentication = React.lazy(() => import("userAuthentication/UserAuthentication"));
 
 const App = () => (
-  <div className="mt-10 text-3xl mx-auto max-w-6xl">
-    <div>Name: core</div>
-    <Products/>
-    <ShoppingCart/>
-    <OrderHistory/>
-    <UserAuthentication/>
-    
-  </div>
-)
-const rootElement = document.getElementById('app')
-if (!rootElement) throw new Error('Failed to find the root element')
+  <>
+    <Header />
+    <Suspense fallback={<div>Loading...</div>}>
+      <Router>
+        <Navigation />
+        <Routes>
+          <Route path="/products" element={<Products />} />
+          <Route path="/auth" element={<UserAuthentication />} />
+          <Route path="/cart" element={<ShoppingCart />} />
+          <Route path="/orders" element={<OrderHistory />} />
+        </Routes>
 
-const root = ReactDOM.createRoot(rootElement as HTMLElement)
+        <Footer />
+      </Router>
+    </Suspense>
+  </>
+);
 
-root.render(<App />)
+export default App;
