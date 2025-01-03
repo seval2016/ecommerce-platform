@@ -1,18 +1,17 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import UserAuthentication from './components/UserAuthentication'
-
-import './index.scss'
+import React from 'react';
+import { Provider } from 'react-redux';
+import { store } from './redux/store';
+import LoginForm from './components/LoginForm';
+import LogoutButton from './components/LogoutButton';
+import RegisterForm from './components/RegisterForm';
 
 const App = () => (
-  <div className="mt-10 text-3xl mx-auto max-w-6xl">
-    <div>Name: userAuthentication</div>
-    <UserAuthentication/>
-  </div>
-)
-const rootElement = document.getElementById('app')
-if (!rootElement) throw new Error('Failed to find the root element')
+   <Provider store={store}>
+       <h1>User Authentication</h1>
+       <LoginForm />
+       <LogoutButton />
+       <RegisterForm />
+   </Provider>
+);
 
-const root = ReactDOM.createRoot(rootElement as HTMLElement)
-
-root.render(<App />)
+export default App;

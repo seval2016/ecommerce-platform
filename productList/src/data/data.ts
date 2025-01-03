@@ -109,6 +109,42 @@ const Cardsdata = [
         arrimg: "https://b.zmtcdn.com/data/o2_assets/4bf016f32f05d26242cea342f30d47a31595763089.png?output-format=webp",
          qnty:0
     },
+    {
+        id: 10,
+        rname: "Anjoy Latenight Meals",
+        imgdata: "https://b.zmtcdn.com/data/pictures/5/113895/3c06f6fbb8f667a2537dfdb6f060dc8b_o2_featured_v2.jpg",
+        address: "Wraps FastFood, Chines",
+        delimg: "https://b.zmtcdn.com/data/o2_assets/0b07ef18234c6fdf9365ad1c274ae0631612687510.png?output-format=webp",
+        somedata: " 1100 + order placed from here recently",
+        price: 100,
+        rating: "3.8",
+        arrimg: "https://b.zmtcdn.com/data/o2_assets/4bf016f32f05d26242cea342f30d47a31595763089.png?output-format=webp",
+         qnty:0
+    },
+    {
+        id: 11,
+        rname: "Hocco Eatery",
+        imgdata: "https://b.zmtcdn.com/data/pictures/chains/5/110155/811c01a5430d50d3260f77917da99e12_o2_featured_v2.jpg",
+        address: "North Indian, Fast Food",
+        delimg: "https://b.zmtcdn.com/data/o2_assets/0b07ef18234c6fdf9365ad1c274ae0631612687510.png?output-format=webp",
+        somedata: "500 + order placed from here recently",
+        price: 300,
+        rating: "3.8",
+        arrimg: "https://b.zmtcdn.com/data/o2_assets/4bf016f32f05d26242cea342f30d47a31595763089.png?output-format=webp",
+         qnty:0
+    },
+    {
+        id:12,
+        rname: "Chai Wai",
+        imgdata: "https://b.zmtcdn.com/data/pictures/3/18514413/0a17b72e9fec52a3ca736f4c2ea3646f_o2_featured_v2.jpg",
+        address: "Tea, Coffee, Shake, Beverages",
+        delimg: "https://b.zmtcdn.com/data/o2_assets/0b07ef18234c6fdf9365ad1c274ae0631612687510.png?output-format=webp",
+        somedata: "500 + order placed from here recently",
+        price: 100,
+        rating: "3.2",
+        arrimg: "https://b.zmtcdn.com/data/o2_assets/4bf016f32f05d26242cea342f30d47a31595763089.png?output-format=webp",
+         qnty:0
+    },
 ];
 
 export default Cardsdata;

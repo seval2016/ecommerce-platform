@@ -21,19 +21,19 @@ module.exports = (_, argv) => ({
     historyApiFallback: true,
     watchFiles: [path.resolve(__dirname, 'src')],
     onListening: function (devServer) {
-      const port = devServer.server.address().port
+      const port = devServer.server.address().port;
 
-      printCompilationMessage('compiling', port)
+      printCompilationMessage('compiling', port);
 
       devServer.compiler.hooks.done.tap('OutputMessagePlugin', (stats) => {
         setImmediate(() => {
           if (stats.hasErrors()) {
-            printCompilationMessage('failure', port)
+            printCompilationMessage('failure', port);
           } else {
-            printCompilationMessage('success', port)
+            printCompilationMessage('success', port);
           }
-        })
-      })
+        });
+      });
     }
   },
 
@@ -65,10 +65,10 @@ module.exports = (_, argv) => ({
       name: "core",
       filename: "remoteEntry.js",
       remotes: {
-        productList:"productList@http://localhost:3001/remoteEntry.js",
-        shoppingCart:"shoppingCart@http://localhost:3002/remoteEntry.js",
-        orderHistory:"orderHistory@http://localhost:3003/remoteEntry.js",
-        userAuthentication:"userAuthentication@http://localhost:3004/remoteEntry.js"
+        productList: "productList@http://localhost:3001/remoteEntry.js",
+        shoppingCart: "shoppingCart@http://localhost:3002/remoteEntry.js",
+        orderHistory: "orderHistory@http://localhost:3003/remoteEntry.js",
+        userAuthentication: "userAuthentication@http://localhost:3004/remoteEntry.js",
       },
       exposes: {},
       shared: {
@@ -86,6 +86,6 @@ module.exports = (_, argv) => ({
     new HtmlWebPackPlugin({
       template: "./src/index.html",
     }),
-    new Dotenv()
+    new Dotenv(),
   ],
 });

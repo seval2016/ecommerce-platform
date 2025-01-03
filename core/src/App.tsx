@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-//import UserAuthentication from "userAuthentication/UserAuthentication";
+
 
 const Products = React.lazy(() => import("productList/Products"));
 const ShoppingCart = React.lazy(() => import("shoppingCart/ShoppingCart"));
